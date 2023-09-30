@@ -1,7 +1,7 @@
 import express from 'express';
 import {graphqlHTTP} from 'express-graphql';
-import schema_init from './schema.api';
 import cors from 'cors'
+import schema_init from './api.schema';
 
 
 const app = express();
