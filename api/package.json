@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "ello_test backend",
   "main": "server.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "wambua musalu",
   "license": "ISC",
   "dependencies": {
@@ -13,6 +10,9 @@
     "express": "^4.18.2",
     "express-graphql": "^0.12.0",
     "graphql": "^15.8.0"
+  },
+  "scripts": {
+    "start": "nodemon --exec ts-node server.ts"
   },
   "devDependencies": {
     "@types/cors": "^2.8.14",
