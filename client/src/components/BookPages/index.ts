@@ -35,6 +35,24 @@ const BookPages: React.FC = () => {
     },
   });
 
+  const books_endpoint = "http://localhost:3090/graphql"
+  const get_book_query = `
+  {
+      book(id:${book_number}) {
+          title,
+          author,
+          book_pages {
+            page_index
+            content,
+            tokens {
+              value,
+              position
+            } 
+          },
+    }
+  }
+  `;
+
   const { isLoading } = useQuery(
     "Query",
     async () =>
