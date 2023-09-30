@@ -1,23 +1,23 @@
 terraform {
-    required_providers{
-        aws= {
-            source = "hashicorp/aws"
-            version = "~>4.0"
-        }
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~>4.0"
     }
-    }
+  }
+}
 
-    cloud {
-        organization = "mw__iv"
+# cloud {
+#     organization = "mw__iv"
 
-        workspaces{
-       
-            name = "practice"
-        }
-    }
+#     workspaces{
 
-provider "aws"{
-    region = "eu-north-1"
+#         name = "practice"
+#     }
+# }
+
+provider "aws" {
+  region = "eu-north-1"
 }
 
 data "aws_availability_zones" "available_zones" {
@@ -71,7 +71,7 @@ resource "aws_route_table" "private" {
   vpc_id = aws_vpc.default.id
 
   route {
-    cidr_block = "0.0.0.0/0"
+    cidr_block     = "0.0.0.0/0"
     nat_gateway_id = element(aws_nat_gateway.gateway.*.id, count.index)
   }
 }
@@ -83,8 +83,8 @@ resource "aws_route_table_association" "private" {
 }
 
 resource "aws_security_group" "lb" {
-  name        = "ello-alb-security-group"
-  vpc_id      = aws_vpc.default.id
+  name   = "ello-alb-security-group"
+  vpc_id = aws_vpc.default.id
 
   ingress {
     protocol    = "tcp"
@@ -94,9 +94,9 @@ resource "aws_security_group" "lb" {
   }
 
   egress {
-    from_port = 0
-    to_port   = 0
-    protocol  = "-1"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
@@ -128,10 +128,10 @@ resource "aws_lb_listener" "ello_take_home" {
 
 # ======================  TASKS ===================
 resource "aws_ecs_task_definition" "ello_frontend" {
-  family = "frontend"
+  family                   = "frontend"
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
-  cpu                     = 1024
+  cpu                      = 1024
   memory                   = 2048
 
   container_definitions = <<DEFINITION
@@ -153,7 +153,7 @@ DEFINITION
 }
 
 resource "aws_ecs_task_definition" "ello_backend" {
-  family = "backend"  
+  family                   = "backend"
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
   cpu                      = 1024
