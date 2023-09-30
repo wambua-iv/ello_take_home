@@ -22,7 +22,13 @@ type ContentProps = {
   }[];
 };
 
-
+const ClickableWord: React.FC<ContentProps> = ({ content, tokens }) => {
+    return (
+      <>
+  
+      </>
+    );
+  };
 
 const BookPage: React.FC<PageProps> = ({ book }) => {
   const [showTitlePage, setShowTitlePage] = React.useState<boolean>(true);
