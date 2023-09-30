@@ -1,5 +1,8 @@
-const BookPages: React.FC = () => {
-  type Data = {
+import React from 'react';
+import { useQuery } from "react-query";
+import { useParams } from "react-router-dom";
+
+type Data = {
     book: {
       title: string;
       author: string;
@@ -14,6 +17,7 @@ const BookPages: React.FC = () => {
     };
   };
 
+const BookPages: React.FC = () => {
   const { book_number } = useParams();
 
   const [bookData, setBookData] = React.useState<Data>({
