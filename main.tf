@@ -7,14 +7,14 @@ terraform {
     }
     }
 
-    # cloud {
-    #     organization = "mw__iv"
+    cloud {
+        organization = "mw__iv"
 
-    #     workspaces{
+        workspaces{
        
-    #         name = "practice"
-    #     }
-    # }
+            name = "practice"
+        }
+    }
 
 provider "aws"{
     region = "eu-north-1"
