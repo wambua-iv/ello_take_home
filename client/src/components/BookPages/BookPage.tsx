@@ -35,7 +35,26 @@ const ClickableWord: React.FC<ContentProps> = ({ content, tokens }) => {
                   .replace(/[.,?/#!$%^&*;:{}=\-_`~()"“” ]/g, "")
                   .toLowerCase()}`}
               >
-
+                                {
+                  //enforcing mapping of tokens to page content and displaying
+                  tokens.find(
+                    (element) =>
+                      (element.value ==
+                        word
+                          .replace(/[.,?/#!$%^&*;:{}=\-_`~()"“” ]/g, "")
+                          //punctuation affecting comparison  => force switch of punctuation mark
+                          .replace("’", "'")
+                          .toLowerCase() &&
+                        element.value ==
+                          content.slice(
+                            element.position[0],
+                            element.position[1]
+                          )) ||
+                      "”" //=> added to maintain punctuation order
+                  )
+                    ? word //display word to screem
+                    : " " // maintain word spacing
+                }
               </a>
             ))}
         </div>
