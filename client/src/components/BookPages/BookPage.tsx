@@ -25,7 +25,20 @@ type ContentProps = {
 const ClickableWord: React.FC<ContentProps> = ({ content, tokens }) => {
     return (
       <>
-  
+        <div>
+          {content
+            .match(/.*?[,?!".?”\s-, ]|[\w+]+/g)
+            ?.map((word: string, i: number) => (
+              <a
+                key={i}
+                href={`word/${word
+                  .replace(/[.,?/#!$%^&*;:{}=\-_`~()"“” ]/g, "")
+                  .toLowerCase()}`}
+              >
+
+              </a>
+            ))}
+        </div>
       </>
     );
   };
