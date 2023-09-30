@@ -8,12 +8,12 @@ terraform {
 }
 
 cloud {
-    organization = "mw__iv"
+  organization = "mw__iv"
 
-    workspaces{
+  workspaces {
 
-        name = "practice"
-    }
+    name = "practice"
+  }
 }
 
 provider "aws" {
