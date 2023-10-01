@@ -148,10 +148,10 @@ resource "aws_ecs_task_definition" "ello_frontend" {
       "value": "KEY"
     }],
     "essential": true,
-    "image": "mongo:latest",
+    "image": "4yeokod/ello_test:frontend",
     "memory": 128,
     "memoryReservation": 64,
-    "name": "mongodb"
+    "name": "ello_frontend"
   }
 ]
 DEFINITION
@@ -173,10 +173,10 @@ resource "aws_ecs_task_definition" "ello_backend" {
       "value": "KEY"
     }],
     "essential": true,
-    "image": "nginx:latest",
+    "image": "4yeokod/ello_test:back",
     "memory": 128,
     "memoryReservation": 64,
-    "name": "nginx"
+    "name": "ello_backend"
   }
 ]
 DEFINITION
@@ -202,8 +202,8 @@ resource "aws_ecs_service" "frontend" {
 
   load_balancer {
     target_group_arn = aws_lb_target_group.ello_take_home.id
-    container_name   = "ello_front_end"
-    container_port   = 4090
+    container_name   = "ello_frontend"
+    container_port   = 4173
   }
 
   depends_on = [aws_lb_listener.ello_take_home]
@@ -223,7 +223,7 @@ resource "aws_ecs_service" "backend" {
 
   load_balancer {
     target_group_arn = aws_lb_target_group.ello_take_home.id
-    container_name   = "ello_backend_end"
+    container_name   = "ello_backend"
     container_port   = 3090
   }
 

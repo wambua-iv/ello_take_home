@@ -12,7 +12,7 @@ const Landing: React.FC = () => {
           <div className="books_book">
             <div className="books_img">
             <a href="/book/0/ColorOfHisOwn">
-              <img src="../public/colorof his.jpg" />
+              <img src="https://imgs.search.brave.com/peTi0--3sl-Wj_E68Lzo_VP7tBU8rpvJC3y8V04WZOk/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFzWTZ5VEk2Skwu/anBn" />
               </a>
             </div>
             <div className="books_title">
@@ -23,7 +23,7 @@ const Landing: React.FC = () => {
           <div className="books_book">
             <div className="books_img">
                 <a href="/book/1/fishingintheair">
-              <img src="../public/fishing in theair.jpeg" />
+              <img src="https://imgs.search.brave.com/7zHQX0LI1H1tzGjNqXcwqv4e6TVCUa3GKu6Z0BdcEBQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/cHVibGlzaGVyc3dl/ZWtseS5jb20vY292/ZXIvOTc4MDA2MDI4/MTExMw" />
               </a>
             </div>
             <div className="books_title">
