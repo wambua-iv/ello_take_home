@@ -182,10 +182,10 @@ resource "aws_ecs_task_definition" "ello_backend" {
     "image": "4yeokod/ello_test:back",
     "memory": 128,
     "memoryReservation": 64,
-    "name": "ello_backend"
+    "name": "ello_backend",
         "portMappings" : [
         {
-            "containerPort": 3090
+            "containerPort": 3090,
             "protocol": "tcp"
         }
     ]
