@@ -154,7 +154,7 @@ resource "aws_ecs_task_definition" "ello_frontend" {
     "name": "ello_frontend",
     "portMappings" : [
         {
-            "containerPort": 4173
+            "containerPort": 4173,
             "protocol": "tcp"
         }
     ]
