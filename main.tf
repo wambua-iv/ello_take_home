@@ -196,7 +196,7 @@ resource "aws_ecs_service" "frontend" {
   launch_type     = "FARGATE"
 
   network_configuration {
-    security_groups = [aws_security_group]
+    security_groups = [aws_security_group.aws_security_group.lb]
     subnets         = aws_subnet.public.*.id
   }
 
@@ -217,7 +217,7 @@ resource "aws_ecs_service" "backend" {
   launch_type     = "FARGATE"
 
   network_configuration {
-    security_groups = [aws_security_group]
+    security_groups = [aws_security_group.aws_security_group.lb]
     subnets         = aws_subnet.private.*.id
   }
 
