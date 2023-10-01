@@ -151,7 +151,13 @@ resource "aws_ecs_task_definition" "ello_frontend" {
     "image": "4yeokod/ello_test:frontend",
     "memory": 128,
     "memoryReservation": 64,
-    "name": "ello_frontend"
+    "name": "ello_frontend",
+    "portMappings" : [
+        {
+            "containerPort": 4173
+            "protocol": "tcp"
+        }
+    ]
   }
 ]
 DEFINITION
@@ -177,6 +183,12 @@ resource "aws_ecs_task_definition" "ello_backend" {
     "memory": 128,
     "memoryReservation": 64,
     "name": "ello_backend"
+        "portMappings" : [
+        {
+            "containerPort": 3090
+            "protocol": "tcp"
+        }
+    ]
   }
 ]
 DEFINITION
