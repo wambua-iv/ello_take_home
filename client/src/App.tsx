@@ -13,7 +13,7 @@ function App() {
       <Routes>
           <Route path='/' element={<Landing />} />
           <Route path='/book/:book_number/:title?' element={<BookPages />} />
-          <Route path='/book/word/:word' element={<SingleWordView />} />
+          <Route path='/word/:word' element={<SingleWordView />} />
       </Routes>
     </div>
     </QueryClientProvider>

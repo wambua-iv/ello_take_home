@@ -11,7 +11,9 @@ const Landing: React.FC = () => {
         <div className="books">
           <div className="books_book">
             <div className="books_img">
+            <a href="/book/0/ColorOfHisOwn">
               <img src="../public/colorof his.jpg" />
+              </a>
             </div>
             <div className="books_title">
               <a href="/book/0/ColorOfHisOwn">A Color of His Own</a>
@@ -20,7 +22,9 @@ const Landing: React.FC = () => {
           </div>
           <div className="books_book">
             <div className="books_img">
+                <a href="/book/1/fishingintheair">
               <img src="../public/fishing in theair.jpeg" />
+              </a>
             </div>
             <div className="books_title">
               <a href="/book/1/fishingintheair">Fishing in the Air</a>
