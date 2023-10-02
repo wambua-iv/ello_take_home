@@ -148,7 +148,7 @@ resource "aws_ecs_task_definition" "ello_frontend" {
       "value": "KEY"
     }],
     "essential": true,
-    "image": "4yeokod/ello_frontend",
+    "image": "4yeokod/ello_frontend:latest",
     "memory": 128,
     "memoryReservation": 64,
     "name": "ello_frontend",
