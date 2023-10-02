@@ -148,7 +148,7 @@ resource "aws_ecs_task_definition" "ello_frontend" {
       "value": "KEY"
     }],
     "essential": true,
-    "image": "4yeokod/ello_test:frontend",
+    "image": "4yeokod/ello_frontend",
     "memory": 128,
     "memoryReservation": 64,
     "name": "ello_frontend",
@@ -204,7 +204,7 @@ resource "aws_ecs_service" "frontend" {
   name            = "ello-frontend-service"
   cluster         = aws_ecs_cluster.main.id
   task_definition = aws_ecs_task_definition.ello_frontend.arn
-  desired_count   = 2
+  desired_count   = 1
   launch_type     = "FARGATE"
 
   network_configuration {
@@ -225,7 +225,7 @@ resource "aws_ecs_service" "backend" {
   name            = "ello-backend-service"
   cluster         = aws_ecs_cluster.main.id
   task_definition = aws_ecs_task_definition.ello_backend.arn
-  desired_count   = 2
+  desired_count   = 1
   launch_type     = "FARGATE"
 
   network_configuration {
