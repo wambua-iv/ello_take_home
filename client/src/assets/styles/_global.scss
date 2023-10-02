@@ -23,3 +23,8 @@ body{
     overflow-x: hidden;
 
 }
+
+.inactiveLink {
+    pointer-events: none;
+    cursor: default;
+ }
